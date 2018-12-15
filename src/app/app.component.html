@@ -1,9 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
-  <button class="mat-icon-button" mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon class="fa fa-bars"></mat-icon>
-  </button>
-  <h3>{{ title }}</h3>
-</mat-toolbar>
+<app-navbar [sidenav]="sidenav"></app-navbar>
 <main class="container">
   <mat-sidenav-container>
     <mat-sidenav

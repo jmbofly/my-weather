@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <button class="mat-icon-button" mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon class="fa fa-bars"></mat-icon>
+  </button>
+  <h3>{{ title }}</h3>
+  <mat-form-field>
+    <input matInput [(ngModel)]="query.parts" placeholder="Search Locations" />
+    <mat-icon class="mat-18" class="fa fa-search-location"></mat-icon>
+  </mat-form-field>
+</mat-toolbar>

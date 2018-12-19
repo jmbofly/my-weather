@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+@import 'colors';
+
+@include mat-core();
+
+$weather-dark-theme: mat-dark-theme($clr-primary-dark, $clr-accent-light);
+$weather-light-theme: mat-dark-theme($clr-primary-light, $clr-primary-dark);
+$hero-dark-theme: mat-dark-theme($clr-primary-contrast, $clr-accent-light);
+$hero-ligh-themet: mat-light-theme($clr-primary-light, $clr-accent-light);
+$app-default-theme: mat-dark-theme($primary, $accent);
+
+// Include theme styles for Angular Material components.
+@include angular-material-theme($app-default-theme);
+

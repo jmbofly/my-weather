@@ -1,0 +1,27 @@
+/*
+* @Author: jmbofly
+* @Date:   2018-12-16 06:19:04
+* @Last Modified by:   jmbofly
+* @Last Modified time: 2018-12-17 00:16:46
+*/
+/*
+* @Author: jmbofly
+* @Date:   2018-12-14 22:02:05
+* @Last Modified by:   jmbofly
+* @Last Modified time: 2018-12-16 05:54:13
+*/
+@import '~@angular/material/theming';
+@import 'colors';
+
+@include mat-core();
+
+$container-position: relative;
+
+$container-padding: 0;
+
+$container-margin: 0 auto 16px auto;
+
+$container-height: 100% + 16;
+
+$container-width: 100%;
+

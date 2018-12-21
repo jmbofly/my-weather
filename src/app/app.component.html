@@ -1,28 +1,18 @@
-<app-navbar [sidenav]="sidenav"></app-navbar>
-<main class="container">
+<app-navbar #navbar [sidenav]="sidenav"></app-navbar>
+<main>
   <mat-sidenav-container>
     <mat-sidenav
       #sidenav
-      mode="side"
+      mode="push"
       align="start"
       closed
-      [style.width]="'20%'"
-    >
-      Sidenav content
+      [style.width]="(isHandset$ | async) ? '100%' : '25%'"
+      >Sidenav contents
     </mat-sidenav>
-    <!-- Body -->
+    < !-- Body -->
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
 
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>title</mat-card-title>
-        <mat-card-subtitle>subtitle</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content> </mat-card-content>
-      <mat-card-actions>
-        <button mat-fab>
-          <mat-icon class="mat-20 fa fa-thumbs-up"></mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 </main>

@@ -1,42 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import 'theme';
-@import 'variables';
-
-
 html body {
   margin: 0;
   height: 100%;
 }
 
-* {
-  h1,
-  h2,
-  h3 {
-    font-family: 'Roboto Mono';
-    font-weight: 900;
-  }
-
-  h4,
-  h5,
-  h6,
-  p,
-  a {
-    font-family: 'Abel';
-    font-weight: 100;
-  }
+// * {
+//   h1,
+//   h2,
+//   h3 {
+//     font-family: 'Work Sans', sans-serif;
+//   }
+//   h4,
+//   h5,
+//   h6,
+//   p,
+//   a {
+//     font-family: 'Bitter', serif;
+//   }
+// }
+.container {
+  margin: $container-margin;
 }
 
-.container {
-  padding: $container-padding;
-  margin: $container-margin;
-  width: $container-width;
-  height: $container-height;
-  position: $container-position;
+.cto-container {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
+.cto-button {
+  min-width: 60%;
+  height: 48px;
+}
+
+.hero-container {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  .hero-title {
+    font-size: mat-font-size($second, title);
+  }
 }
 
 .mat-form-field {
-  input {
-    width: 100%;
+  &.inline-input {
+    display: inline;
   }
+  &.mat-form-field-appearance-outline .mat-form-field-outline {
+    background: rgba(255, 255, 255, 0.13);
+  }
+}
+
+.mat-card {
+  border-radius: 0;
 }

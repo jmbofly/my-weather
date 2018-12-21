@@ -1,14 +1,18 @@
 @import '~@angular/material/theming';
-@import 'colors';
-
-@include mat-core();
-
-$weather-dark-theme: mat-dark-theme($clr-primary-dark, $clr-accent-light);
-$weather-light-theme: mat-dark-theme($clr-primary-light, $clr-primary-dark);
-$hero-dark-theme: mat-dark-theme($clr-primary-contrast, $clr-accent-light);
-$hero-ligh-themet: mat-light-theme($clr-primary-light, $clr-accent-light);
+@import 'variables';
+$first: mat-typography-config( $font-family: 'Didact Gothic, sans-serif');
+$second: mat-typography-config( $font-family: 'PT Sans, sans-serif');
+$primary: mat-palette($mat-teal);
+$accent: mat-palette($mat-deep-orange);
 $app-default-theme: mat-dark-theme($primary, $accent);
-
 // Include theme styles for Angular Material components.
+@include mat-core();
 @include angular-material-theme($app-default-theme);
-
+@include angular-material-typography($first);
+@include mat-toolbar-typography($second);
+@include mat-form-field-typography($second);
+// Widgets
+$background: get-map($primary, background);
+$foreground: get-map($primary, foreground);
+$accent-background: get-map($accent, background);
+$accent-foreground: get-map($accent, foreground);

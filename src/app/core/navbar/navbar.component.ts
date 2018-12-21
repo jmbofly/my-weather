@@ -11,11 +11,8 @@ export interface Query {
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @Input() sidenav: any;
-
-  location: any;
-  query: Query = {};
-  constructor() {}
+  @Input() sidenav: any;  // mat-sidenav - gives access to sidenav methods and props
+  constructor() { }
 
   ngOnInit() {}
 }

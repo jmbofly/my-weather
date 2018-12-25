@@ -1,0 +1,18 @@
+<mat-form-field
+  appearance="outline"
+  class="inline-input"
+  title="location search input"
+>
+  <input
+    fxFill="60"
+    matInput
+    autofocus
+    #search
+    [(ngModel)]="query.queryString"
+    placeholder="City name or Zipcode"
+    type="text"
+  />
+  <!-- <button matSuffix class="mat-icon-button" mat-icon-button>
+      <mat-icon class="fa fa-search"></mat-icon>
+    </button> -->
+</mat-form-field>

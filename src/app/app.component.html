@@ -1,18 +1,28 @@
 <app-navbar #navbar [sidenav]="sidenav"></app-navbar>
-<main>
+<main id="main-content">
   <mat-sidenav-container>
     <mat-sidenav
       #sidenav
+      fixedInViewport
+      [fixedTopGap]="'56'"
       mode="push"
       align="start"
       closed
       [style.width]="(isHandset$ | async) ? '100%' : '25%'"
-      >Sidenav contents
+    >
+      <span class="mat-h3">Menu</span>
+      <mat-list role="menu">
+        <mat-nav-list>
+          <mat-list-item
+            role="menuitem"
+            *ngFor="let link of navList"
+            (click)="navigateTo(link.url, null, sidenav)"
+            >{{ link.name }}</mat-list-item
+          >
+        </mat-nav-list>
+      </mat-list>
     </mat-sidenav>
     < !-- Body -->
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-
-    </mat-sidenav-content>
+    <mat-sidenav-content> <router-outlet></router-outlet> </mat-sidenav-content>
   </mat-sidenav-container>
 </main>

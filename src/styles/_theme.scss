@@ -1,9 +1,15 @@
 @import '~@angular/material/theming';
 @import 'variables';
-$first: mat-typography-config( $font-family: 'Didact Gothic, sans-serif');
-$second: mat-typography-config( $font-family: 'PT Sans, sans-serif');
-$primary: mat-palette($mat-teal);
-$accent: mat-palette($mat-deep-orange);
+$first: mat-typography-config(
+$font-family: 'BioRhyme, serif'
+
+);
+$second: mat-typography-config(
+$font-family: 'Arvo, serif'
+
+);
+$primary: mat-palette($mat-teal, 600, 200, 900);
+$accent: mat-palette($mat-amber, 600, 200, 900);
 $app-default-theme: mat-dark-theme($primary, $accent);
 // Include theme styles for Angular Material components.
 @include mat-core();

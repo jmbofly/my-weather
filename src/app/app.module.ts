@@ -10,10 +10,21 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationModule } from './location/location.module';
+import { WeatherModule } from './weather/weather.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, FlexLayoutModule, BrowserAnimationsModule, SharedModule, CoreModule, HomeModule, AppRoutingModule, LocationModule],
+  imports: [
+    BrowserModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    CoreModule,
+    HomeModule,
+    AppRoutingModule,
+    LocationModule,
+    WeatherModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

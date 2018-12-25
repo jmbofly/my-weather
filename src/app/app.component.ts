@@ -7,7 +7,7 @@ import {
 import { Observable, of, Subject } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { AuthService } from './core/auth.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, UrlTree, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +22,10 @@ export class AppComponent implements OnInit {
   isTablet$: Observable<boolean>;
   isFullscreen$: Observable<boolean>;
 
+  navList = [
+    {name: 'Home', url: 'home'},
+    {name: 'Location', url: 'location'},
+  ];
   constructor(
     public breakpointObserver: BreakpointObserver,
     public activatedRoute: ActivatedRoute,
@@ -30,44 +34,47 @@ export class AppComponent implements OnInit {
     const setHandsetLayout = breakpointObserver
       .observe('(max-width: 760px)')
       .subscribe((result: BreakpointState) => {
-        console.log(
-          `${
-            result.matches
-              ? 'layout set => handset'
-              : 'layout hidden => handset'
-          }`
-        );
+        // console.log(
+        //   `${
+        //     result.matches
+        //       ? 'layout set => handset'
+        //       : 'layout hidden => handset'
+        //   }`
+        // );
         this.isHandset$ = of(result.matches);
       });
 
     const setTabletLayout = breakpointObserver
       .observe(['(min-width: 760px)', '(max-width: 1060)'])
       .subscribe((result: BreakpointState) => {
-        console.log(
-          `${
-            result.matches ? 'layout set => tablet' : 'layout hidden => tablet'
-          }`
-        );
+        // console.log(
+        //   `${
+        //     result.matches ? 'layout set => tablet' : 'layout hidden => tablet'
+        //   }`
+        // );
         this.isTablet$ = of(result.matches);
       });
 
     const setFullscreenLayout = breakpointObserver
       .observe('(min-width: 960px)')
       .subscribe((result: BreakpointState) => {
-        console.log(
-          `${
-            result.matches
-              ? 'layout set => fullscreen'
-              : 'layout hidden => fullscreen'
-          }`
-        );
+        // console.log(
+        //   `${
+        //     result.matches
+        //       ? 'layout set => fullscreen'
+        //       : 'layout hidden => fullscreen'
+        //   }`
+        // );
         this.isFullscreen$ = of(result.matches);
       });
   }
 
   ngOnInit() {}
 
-  navigateTo(url) {
+  navigateTo(url: string | UrlTree, extras?: NavigationExtras, element?: any) {
+    if (element && element.opened) {
+      element.close();
+    }
     return this.router.navigateByUrl(url);
   }
 }

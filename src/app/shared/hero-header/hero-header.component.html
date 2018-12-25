@@ -1,0 +1,39 @@
+<header class="hero-header">
+  <mat-card>
+    <mat-card-content class="hero-content" [style.background]="heroBG">
+      <h1 class="hero-title">{{ title }}</h1>
+      <button
+        [hidden]="!hasCTO"
+        color="accent"
+        class="hero-cto-button"
+        mat-raised-button
+        (click)="router.navigateByUrl(link.url)"
+      >
+        {{ link?.buttonText }}&nbsp;
+        <mat-icon>{{ link?.icon }}</mat-icon>
+      </button>
+      <ng-content></ng-content>
+    </mat-card-content>
+  </mat-card>
+</header>
+
+<!-- <header class="hero-header">
+  <mat-card>
+    <mat-card-content class="hero-content home">
+      <h1 class="hero-headline">
+        Find location. <br />
+        Get weather. <br />
+        Make plans.
+      </h1>
+      <button
+        color="accent"
+        class="hero-cto-button"
+        mat-raised-button
+        (click)="navigateTo('location')"
+      >
+        Search Locations&nbsp;
+        <mat-icon>location_on</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</header> -->

@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+@import 'variables';
+$first: mat-typography-config(
+$font-family: 'BioRhyme, serif'
+
+);
+$second: mat-typography-config(
+$font-family: 'Arvo, serif'
+
+);
+$primary: mat-palette($mat-teal, 600, 200, 900);
+$accent: mat-palette($mat-amber, 600, 200, 900);
+$app-default-theme: mat-dark-theme($primary, $accent);
+// Include theme styles for Angular Material components.
+@include mat-core();
+@include angular-material-theme($app-default-theme);
+@include angular-material-typography($first);
+@include mat-toolbar-typography($second);
+@include mat-form-field-typography($second);
+// Widgets
+$background: get-map($primary, background);
+$foreground: get-map($primary, foreground);
+$accent-background: get-map($accent, background);
+$accent-foreground: get-map($accent, foreground);

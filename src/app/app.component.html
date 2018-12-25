@@ -1,33 +1,28 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
-  <button class="mat-icon-button" mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon class="fa fa-bars"></mat-icon>
-  </button>
-  <h3>{{ title }}</h3>
-</mat-toolbar>
-<main class="container">
+<app-navbar #navbar [sidenav]="sidenav"></app-navbar>
+<main id="main-content">
   <mat-sidenav-container>
     <mat-sidenav
       #sidenav
-      mode="side"
+      fixedInViewport
+      [fixedTopGap]="'56'"
+      mode="push"
       align="start"
       closed
-      [style.width]="'20%'"
+      [style.width]="(isHandset$ | async) ? '100%' : '25%'"
     >
-      Sidenav content
+      <span class="mat-h3">Menu</span>
+      <mat-list role="menu">
+        <mat-nav-list>
+          <mat-list-item
+            role="menuitem"
+            *ngFor="let link of navList"
+            (click)="navigateTo(link.url, null, sidenav)"
+            >{{ link.name }}</mat-list-item
+          >
+        </mat-nav-list>
+      </mat-list>
     </mat-sidenav>
-    <!-- Body -->
-
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>title</mat-card-title>
-        <mat-card-subtitle>subtitle</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content> </mat-card-content>
-      <mat-card-actions>
-        <button mat-fab>
-          <mat-icon class="mat-20 fa fa-thumbs-up"></mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+    < !-- Body -->
+    <mat-sidenav-content> <router-outlet></router-outlet> </mat-sidenav-content>
   </mat-sidenav-container>
 </main>

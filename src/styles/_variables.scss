@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$base-measurement: 8px;
+$padding-1: 2rem;
+$padding-2: 3rem;
+$padding-3: 4rem;
+$main-content-padding-top: 64px;

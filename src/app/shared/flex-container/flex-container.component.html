@@ -1,0 +1,53 @@
+<section class="container">
+  <div class="section-title">
+    <h1>{{ headline }}</h1>
+  </div>
+  <div class="row-container">
+    <div class="col-container" *ngFor="let item of list; let i = index">
+      <mat-card *ngIf="item" [ngClass]="!!isFlat ? 'mat-flat-card' : ''">
+        <mat-card-header>
+          <mat-card-title>{{ item?.title }}</mat-card-title>
+          <mat-card-subtitle *ngIf="item.subtitle">{{
+            item?.subtitle
+          }}</mat-card-subtitle>
+        </mat-card-header>
+        <img matCardImage [src]="item.image?.url" alt="item?.image?.alt" />
+        <mat-card-content>
+          <p class="mat-body-strong">{{ item.caption }}</p>
+        </mat-card-content>
+        <mat-card-actions
+          [align]="item.alignActions"
+          *ngIf="item.actions; let actions"
+        >
+          <button
+            *ngFor="let action of actions"
+            mat-flat-button
+            color="accent"
+            (click)="router.navigateByUrl(action?.args)"
+            [title]="action?.name"
+          >
+            <mat-icon aria-label="label">{{ action?.icon }}</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="container">
+  <div class="section-title"><h1>Reliable, accurate weather</h1></div>
+  <div class="row-container">
+    <div
+      class="col-container"
+      *ngFor="let item of placeholderImgList; let i = index"
+    >
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Lorem Ipsum</mat-card-title>
+        </mat-card-header>
+        <img [hidden]="i > 3" matCardImage [src]="item" alt="" />
+        <p class="mat-caption">Elit cillum ipsum eiusmod ut nisi est.</p>
+      </mat-card>
+    </div>
+  </div>
+</section> -->

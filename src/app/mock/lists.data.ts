@@ -1,11 +1,11 @@
 export interface HeaderLink {
-  buttonText: string;
-  name: string;
-  url: string;
-  icon: string;
+  buttonText?: string;
+  name?: string;
+  url?: string;
+  icon?: string;
 }
 export interface MockHeader {
-  title: string;
+  title?: string;
   hasCTO?: boolean;
   heroBG?: string;
   link?: HeaderLink;
@@ -40,18 +40,17 @@ export interface Action {
 }
 
 export class FlexItem {
-  title: string;
+  title?: string;
   subtitle?: string;
   image?: { url: string; alt: string };
-  caption: string;
-  alignActions: 'start' | 'center' | 'end';
-  actions: Action[];
+  caption?: string;
+  alignActions?: 'start' | 'center' | 'end';
+  actions?: Action[];
 }
 
 export const MockFlexList: FlexItem[] = [
   {
     title: 'Fast and Intelligent',
-    subtitle: 'Uses Weather API endpoint with custom search fields',
     image: {
       url: 'https://placeimg.com/400/400/any',
       alt: 'Image'
@@ -70,7 +69,6 @@ export const MockFlexList: FlexItem[] = [
   },
   {
     title: 'HTTP back-end',
-    subtitle: 'No fuss, just a url',
     image: {
       url: 'https://placeimg.com/400/400/any',
       alt: 'Image'
@@ -88,7 +86,6 @@ export const MockFlexList: FlexItem[] = [
   },
   {
     title: 'Save your locations',
-    subtitle: 'Resgister with MyWeather, and do-whacha-wat, yo',
     image: {
       url: 'https://placeimg.com/400/400/any',
       alt: 'Image'

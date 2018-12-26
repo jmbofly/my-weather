@@ -3,7 +3,7 @@
     <mat-card-content class="hero-content" [style.background]="heroBG">
       <h1 class="hero-title">{{ title }}</h1>
       <button
-        [hidden]="!hasCTO"
+        *ngIf="hasCTO"
         color="accent"
         class="hero-cto-button"
         mat-raised-button

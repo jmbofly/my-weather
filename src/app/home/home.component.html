@@ -1,9 +1,14 @@
 <app-hero-header
   [title]="headerTitle"
-  [hasCTO]="true"
+  [hasCTO]="false"
   [heroBG]="'url(' + '../assets/images/backgrounds/map_blue.jpg' + ')'"
   [link]="headerLink"
-></app-hero-header>
+>
+	<mat-form-field appearance="fill">
+		<input type="text" matInput #location name="location">
+		<mat-icon matSuffix>add_location</mat-icon>
+	</mat-form-field>
+</app-hero-header>
 <app-flex-container
   [headline]="'Lightweight & Powerful'"
   [list]="placeholderFlexList"

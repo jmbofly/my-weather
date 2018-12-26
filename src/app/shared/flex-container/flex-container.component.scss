@@ -5,13 +5,15 @@
     @media (min-width: 760px) {
       margin-left: 20%;
       margin-right: 20%;
+      // max-width: 60%;
     }
     @media (min-width: 1060px) {
-      width: 75%;
-      margin-left: 12.5%;
-      margin-right: auto;
+      margin-left: 25%;
+      margin-right: 25%;
+      // max-width: 50%;
     }
-  } // Section title
+  }
+  // Section title
   .section-title {
     h1 {
       text-align: center;
@@ -20,25 +22,28 @@
   } // Flex-Box row-container
   .row-container {
     min-height: 240px;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
-    margin-bottom: 1rem; // Flex-Box column container
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    // Flex-Box column container
     .col-container {
-      margin-bottom: 1rem;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: col;
-      flex-direction: col;
-      -webkit-box-flex: auto;
-      -ms-flex: auto;
-      flex: auto; // Flex-Box responsive card
+      margin: 1rem;
+      width: 100%;
+
+      flex: 3 10 10vmin; // Flex-Box responsive card
+      // @media screen {
+      //   @media (min-width: 760px) {
+      //     width: 80%;
+      //   }
+      //   @media (min-width: 1060px) {
+      //     width: 60%;
+      //   }
+      // }
       .mat-card,
       .mat-card.mat-flat-card {
         padding: 2rem;
@@ -54,3 +59,5 @@
     }
   }
 }
+
+
